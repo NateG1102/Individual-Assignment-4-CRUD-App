@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Goals</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Goals</h1>
+    <div id="goalsList">
+        <ul>
+            <li th:each="goal : ${goals}">
+                <h3 th:text="${goal.title}">Goal Title</h3>
+                <p th:text="'Details: ' + ${goal.details}">Details</p>
+                <p th:text="'Target Date: ' + ${goal.targetDate}">Target Date</p>
+                <p th:text="'Status: ' + ${goal.status}">Status</p>
+                <form th:action="@{/goals/delete/{goalId}(goalId=${goal.goalId})}" method="post">
+                    <button type="submit" class="btn">Delete Goal</button>
+                </form>
+                <form th:action="@{/goals/update/{goalId}(goalId=${goal.goalId})}" method="post">
+                    <input type="hidden" name="goalId" th:value="${goal.goalId}">
+                    <button type="submit" class="btn">Update Goal</button>
+                </form>
+                <form th:action="@{/tasks/goal/{goalId}(goalId=${goal.goalId})}" method="get">
+                    <button type="submit" class="btn">View Tasks</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

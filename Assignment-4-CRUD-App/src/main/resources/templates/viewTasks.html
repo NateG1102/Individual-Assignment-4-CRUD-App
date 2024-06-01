@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tasks</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Tasks for Goal ID: <span th:text="${goalId}"></span></h1>
+    <div id="tasksList">
+        <ul>
+            <li th:each="task : ${tasks}">
+                <h3 th:text="${task.title}">Task Title</h3>
+                <p th:text="'Details: ' + ${task.details}">Details</p>
+                <p th:text="'Target Date: ' + ${task.targetDate}">Target Date</p>
+                <p th:text="'Status: ' + ${task.status}">Status</p>
+                <form th:action="@{/tasks/delete/{taskId}(taskId=${task.taskId})}" method="post">
+                    <button type="submit" class="btn">Delete Task</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
