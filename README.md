@@ -1,9 +1,8 @@
-1.
-# Task Manager Application
+##Task Manager Application
 
 This Task Manager application allows users to track their goals and the individual tasks associated with those goals. It is built using Java, Spring Boot, JPA/Hibernate, MySQL, and Thymeleaf.
 
-## Dependencies
+1. Dependencies
 
 - Java 11 or higher
 - Maven
