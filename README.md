@@ -1,4 +1,4 @@
-##Task Manager Application
+## Task Manager Application
 
 This Task Manager application allows users to track their goals and the individual tasks associated with those goals. It is built using Java, Spring Boot, JPA/Hibernate, MySQL, and Thymeleaf.
 
@@ -12,7 +12,7 @@ This Task Manager application allows users to track their goals and the individu
 - Spring Boot Starter Thymeleaf
 - Spring Boot Starter Validation
 
-  2. Set Up the Database
+2. Set Up the Database
 Create a MySQL database named 340-test:
 
 sql
